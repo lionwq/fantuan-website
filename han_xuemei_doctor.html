@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>韩雪梅医生 - 浙江省中医院眼科专家</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+        .doctor-info {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .doctor-photo {
+            flex: 0 0 200px;
+            text-align: center;
+        }
+        .doctor-photo img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #e9ecef;
+        }
+        .doctor-details {
+            flex: 1;
+        }
+        h1 { 
+            font-size: 32px; 
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .hospital {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        h2 {
+            color: #1e3c72;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e9ecef;
+        }
+        .specialties {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .specialty-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #2a5298;
+        }
+        .specialty-card h3 {
+            color: #1e3c72;
+            margin-bottom: 10px;
+        }
+        .schedule {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .schedule-item {
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .reviews {
+            display: grid;
+            gap: 15px;
+        }
+        .review {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #2a5298;
+        }
+        .rating {
+            color: #ffc107;
+            margin-bottom: 10px;
+        }
+        .appointment {
+            text-align: center;
+            padding: 20px;
+            background: #e3f2fd;
+            border-radius: 12px;
+        }
+        .appointment-btn {
+            display: inline-block;
+            background: #1e3c72;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+        .appointment-btn:hover {
+            background: #2a5298;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #6c757d;
+            font-size: 14px;
+            background: #f1f3f5;
+            border-radius: 10px;
+        }
+        @media (max-width: 768px) {
+            .doctor-info {
+                flex-direction: column;
+                text-align: center;
+            }
+            .doctor-photo {
+                flex: none;
+                margin: 0 auto 20px;
+            }
+            h1 { font-size: 26px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>韩雪梅 医生</h1>
+            <div class="hospital">浙江省中医院 · 眼科主治医师</div>
+            <p>泪道疾病与眼整形领域专家</p>
+        </div>
+
+        <div class="doctor-info">
+            <div class="doctor-photo">
+                <img src="https://n4.hdfimg.com/g12/M08/9B/F7/2IYBAGLmJOKAJxgEAAViPnVfuTw415_200_200_1.jpg?5d48" alt="韩雪梅医生">
+            </div>
+            <div class="doctor-details">
+                <p>韩雪梅医生是浙江省中医院眼科的资深主治医师，拥有丰富的临床经验和扎实的专业知识。她在泪道疾病和眼整形领域具有深厚的专业背景，尤其擅长鼻内镜下泪囊鼻腔吻合术、陈旧性泪小管断裂吻合术等微创手术。</p>
+                <p>作为实名认证医生，所有诊疗服务均由本人提供，确保医疗质量与患者安全。</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>专业擅长</h2>
+            <div class="specialties">
+                <div class="specialty-card">
+                    <h3>泪道疾病</h3>
+                    <ul>
+                        <li>慢性泪囊炎</li>
+                        <li>泪道阻塞</li>
+                        <li>鼻泪管阻塞</li>
+                        <li>泪小管炎</li>
+                        <li>泪道肿物</li>
+                    </ul>
+                    <p><strong>手术专长：</strong>鼻内镜下泪囊鼻腔吻合术、陈旧性泪小管断裂吻合术</p>
+                </div>
+                <div class="specialty-card">
+                    <h3>眼整形</h3>
+                    <ul>
+                        <li>先天性上睑下垂</li>
+                        <li>倒睫合并内眦赘皮</li>
+                        <li>眼睑畸形/肿物</li>
+                        <li>重睑及修复</li>
+                        <li>眼袋切除</li>
+                        <li>肉毒素治疗眼睑痉挛</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>出诊时间</h2>
+            <div class="schedule">
+                <div class="schedule-item">
+                    <h3>湖滨院区</h3>
+                    <p>每周一、三、五上午</p>
+                </div>
+                <div class="schedule-item">
+                    <h3>下沙院区</h3>
+                    <p>每周二、四、六上午</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>患者评价</h2>
+            <div class="reviews">
+                <div class="review">
+                    <div class="rating">★★★★★</div>
+                    <p><strong>疗效满意度：很满意</strong></p>
+                    <p><strong>态度满意度：很满意</strong></p>
+                    <p>术后康复快，复查结果非常好</p>
+                </div>
+                <div class="review">
+                    <div class="rating">★★★★★</div>
+                    <p><strong>疗效满意度：很满意</strong></p>
+                    <p><strong>态度满意度：很满意</strong></p>
+                    <p>感谢您的信任，祝您早日康复！</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>科研与科普</h2>
+            <ul>
+                <li><strong>科研项目：</strong>2024年浙江省中医药科技计划（清热凉血齿衄方研究）</li>
+                <li><strong>科普文章：</strong>
+                    <ul>
+                        <li>《上睑下垂》（61人阅读）</li>
+                        <li>《倒睫》（94人阅读）</li>
+                        <li>《为什么你的眼中常含泪水-谈谈泪道阻塞》（150人观看）</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="appointment">
+            <h2>预约挂号</h2>
+            <p>可通过以下方式预约韩雪梅医生：</p>
+            <ul style="text-align: left; max-width: 600px; margin: 15px auto;">
+                <li>微信/支付宝搜索"浙江省中医院"</li>
+                <li>进入公众号或小程序进行挂号</li>
+                <li>选择相应院区和出诊时间</li>
+            </ul>
+            <a href="https://guahao.haodf.com" class="appointment-btn" target="_blank">立即预约</a>
+        </div>
+
+        <div class="footer">
+            <p>© 2026 浙江省中医院 | 数据来源：好大夫在线、39健康网</p>
+            <p>本页面信息仅供参考，具体诊疗请以医院实际为准</p>
+        </div>
+    </div>
+</body>
+</html>
