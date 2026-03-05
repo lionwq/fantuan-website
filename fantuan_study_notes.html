@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>饭团学习事项记录</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+        h1 { 
+            font-size: 32px; 
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        .day-entry {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .day-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ff6b6b;
+        }
+        .day-date {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ee5a24;
+        }
+        .subject {
+            margin-top: 25px;
+        }
+        h2 {
+            color: #ee5a24;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ff9ff3;
+        }
+        .task-list {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #ee5a24;
+        }
+        .task-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .task-item:last-child {
+            border-bottom: none;
+        }
+        .warning {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+        }
+        .note {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #2196f3;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #6c757d;
+            font-size: 14px;
+            background: #f1f3f5;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        @media (max-width: 768px) {
+            .day-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            .day-date {
+                font-size: 20px;
+            }
+            h1 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📚 饭团学习事项记录</h1>
+        <div class="subtitle">滨和小学一年级 | 每日学习记录</div>
+    </div>
+
+    <div class="day-entry">
+        <div class="day-header">
+            <div class="day-date">2026年3月3日</div>
+            <div class="day-info">星期二</div>
+        </div>
+
+        <div class="subject">
+            <h2>语文</h2>
+            
+            <div class="task-list">
+                <div class="task-item">
+                    <strong>复习读书</strong>：4-7页
+                </div>
+                <div class="task-item">
+                    <strong>预习课文</strong>：《小公鸡和小鸭子》
+                </div>
+            </div>
+
+            <div class="warning">
+                <strong>⚠️ 重要提醒</strong>：
+                <ul>
+                    <li>学校已完成一遍流程，回家需补：</li>
+                    <li>✅ 读课文：学校读了1遍 → 回家再读<strong>2遍</strong></li>
+                    <li>✅ 圈画：一类字和二类字（部分同学当堂未完成）</li>
+                    <li>✅ 思考：课后习题</li>
+                </ul>
+            </div>
+
+            <div class="note">
+                <strong>📝 补做任务</strong>：
+                <ul>
+                    <li>2位同学：课堂作业本第一课需回家补好（学校已完成）</li>
+                </ul>
+            </div>
+
+            <div class="warning">
+                <strong>📦 每日必带课本</strong>（从今天开始）：
+                <ul>
+                    <li>✅ 语文书</li>
+                    <li>✅ 语文课堂作业本</li>
+                    <li>✅ 写字AB</li>
+                    <li>✅ 古诗75首</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2026 饭团学习助手 | 自动更新日期：2026-03-03</p>
+        <p>每天更新学习事项 · 便于查阅和复习</p>
+    </div>
+</body>
+</html>
