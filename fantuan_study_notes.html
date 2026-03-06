@@ -11,7 +11,7 @@
             line-height: 1.6;
             color: #333;
             background: #f8f9fa;
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -33,12 +33,65 @@
             font-size: 16px;
             opacity: 0.9;
         }
+        .nav-bar {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+        }
+        .nav-title {
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #ee5a24;
+            font-size: 18px;
+        }
+        .date-nav {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+        .date-tag {
+            background: #ffecec;
+            color: #ee5a24;
+            padding: 6px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .date-tag:hover {
+            background: #ee5a24;
+            color: white;
+        }
+        .subject-nav {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .subject-tag {
+            padding: 6px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            color: white;
+        }
+        .chinese-tag { background: #2196f3; }
+        .math-tag { background: #4caf50; }
+        .week-summary-tag { background: #9c27b0; }
+        
         .day-entry {
             background: white;
             border-radius: 12px;
             padding: 30px;
             margin-bottom: 30px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            scroll-margin-top: 120px;
         }
         .day-header {
             display: flex;
@@ -55,19 +108,30 @@
         }
         .subject {
             margin-top: 25px;
+            border-radius: 8px;
+            padding: 20px;
         }
-        h2 {
-            color: #ee5a24;
+        .chinese-subject { 
+            background: #e3f2fd; 
+            border-left: 4px solid #2196f3;
+        }
+        .math-subject { 
+            background: #e8f5e9; 
+            border-left: 4px solid #4caf50;
+        }
+        h2.chinese {
+            color: #1976d2;
             margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #ff9ff3;
+        }
+        h2.math {
+            color: #388e3c;
+            margin-bottom: 15px;
         }
         .task-list {
-            background: #f8f9fa;
+            background: rgba(255,255,255,0.7);
             padding: 20px;
             border-radius: 8px;
             margin: 15px 0;
-            border-left: 4px solid #ee5a24;
         }
         .task-item {
             padding: 10px 0;
@@ -84,11 +148,32 @@
             border-left: 4px solid #ffc107;
         }
         .note {
-            background: #e7f3ff;
+            background: #f3e5f5;
             padding: 15px;
             border-radius: 8px;
             margin: 15px 0;
-            border-left: 4px solid #2196f3;
+            border-left: 4px solid #9c27b0;
+        }
+        .week-summary {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            scroll-margin-top: 120px;
+        }
+        .week-summary h2 {
+            color: #9c27b0;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #9c27b0;
+        }
+        .summary-section {
+            margin-bottom: 20px;
+        }
+        .summary-section h3 {
+            color: #7b1fa2;
+            margin-bottom: 10px;
         }
         .footer {
             text-align: center;
@@ -111,6 +196,13 @@
             h1 {
                 font-size: 26px;
             }
+            .date-nav, .subject-nav {
+                gap: 8px;
+            }
+            .date-tag, .subject-tag {
+                padding: 5px 12px;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -120,14 +212,29 @@
         <div class="subtitle">滨和小学一年级 | 每日学习记录</div>
     </div>
 
-    <div class="day-entry">
+    <!-- 导航栏 -->
+    <div class="nav-bar">
+        <div class="nav-title">📌 快速导航</div>
+        <div class="date-nav">
+            <a href="#date-20260305" class="date-tag">2026.03.05</a>
+            <a href="#week-summary" class="date-tag week-summary-tag">本周总结</a>
+        </div>
+        <div class="subject-nav">
+            <a href="#chinese" class="subject-tag chinese-tag">语文</a>
+            <a href="#math" class="subject-tag math-tag">数学</a>
+        </div>
+    </div>
+
+    <!-- 3月5日学习内容 -->
+    <div class="day-entry" id="date-20260305">
         <div class="day-header">
-            <div class="day-date">2026年3月5日</div>
-            <div class="day-info">星期四</div>
+            <div class="day-date">2026年3月5日 | 星期四</div>
+            <div class="day-info">本周第1天</div>
         </div>
 
-        <div class="subject">
-            <h2>语文</h2>
+        <!-- 语文 -->
+        <div class="subject chinese-subject" id="chinese">
+            <h2 class="chinese">语文</h2>
             
             <div class="task-list">
                 <div class="task-item">
@@ -165,67 +272,98 @@
                 </ul>
             </div>
 
-            <div class="subject">
-                <h2>数学</h2>
-                
-                <div class="task-list">
-                    <div class="task-item">
-                        <strong>作业检查</strong>：翻阅孩子课堂作业本P1的作业情况
-                    </div>
-                    <div class="task-item">
-                        <strong>订正要求</strong>：P1最后一题订正需注意4点规范
-                    </div>
+            <!-- 周末语文作业 -->
+            <div class="task-list" style="margin-top: 20px;">
+                <div class="task-item">
+                    <strong>【周末作业】预习课文</strong>：《树和喜鹊》p29-30
                 </div>
-
-                <div class="warning">
-                    <strong>⚠️ 订正注意事项</strong>：
-                    <ul>
-                        <li>✅ <strong>图形标准性</strong>：点子图上画图形时通过"数点子"保证规范：
-                            <ul>
-                                <li>正方形：每条边的点子数量相同</li>
-                                <li>长方形：对边的点子数量相同（如上下边5个点，左右边3个点）</li>
-                            </ul>
-                        </li>
-                        <li>✅ <strong>工具辅助</strong>：必须使用直尺对齐点子画线，确保线条笔直，避免图形歪斜</li>
-                        <li>✅ <strong>端正学习态度</strong>：引导孩子明白认真对待每一次作业，培养严谨细致的学习习惯，对未来学习至关重要</li>
-                    </ul>
+                <div class="task-item">
+                    <strong>【周末作业】复习读书</strong>：语文书p8-15
                 </div>
-
-                <div class="note">
-                    <strong>📌 重要提醒</strong>：
-                    <ul>
-                        <li>下周一请帮孩子准备平面图形学具和七巧板</li>
-                    </ul>
+                <div class="task-item">
+                    <strong>【周末作业】课堂作业</strong>：完成课堂作业本p3、5、7、8页的第一题
                 </div>
             </div>
 
-            <div class="subject">
-                <h2>周末语文作业</h2>
-                
-                <div class="task-list">
-                    <div class="task-item">
-                        <strong>预习课文</strong>：《树和喜鹊》p29-30
-                    </div>
-                    <div class="task-item">
-                        <strong>复习读书</strong>：语文书p8-15
-                    </div>
-                    <div class="task-item">
-                        <strong>课堂作业</strong>：完成课堂作业本p3、5、7、8页的第一题
-                    </div>
-                </div>
+            <div class="note">
+                <strong>📌 重要提醒</strong>：
+                <ul>
+                    <li>本学期家校联系本还没发，如需记作业可以先让孩子带上学期的家校联系本</li>
+                </ul>
+            </div>
+        </div>
 
-                <div class="note">
-                    <strong>📌 重要提醒</strong>：
-                    <ul>
-                        <li>本学期家校联系本还没发，如需记作业可以先让孩子带上学期的家校联系本</li>
-                    </ul>
+        <!-- 数学 -->
+        <div class="subject math-subject" id="math">
+            <h2 class="math">数学</h2>
+            
+            <div class="task-list">
+                <div class="task-item">
+                    <strong>作业检查</strong>：翻阅孩子课堂作业本P1的作业情况
                 </div>
+                <div class="task-item">
+                    <strong>订正要求</strong>：P1最后一题订正需注意规范
+                </div>
+            </div>
+
+            <div class="warning">
+                <strong>⚠️ 订正注意事项</strong>：
+                <ul>
+                    <li>✅ <strong>图形标准性</strong>：点子图上画图形时通过"数点子"保证规范：
+                        <ul>
+                            <li>正方形：每条边的点子数量相同</li>
+                            <li>长方形：对边的点子数量相同（如上下边5个点，左右边3个点）</li>
+                        </ul>
+                    </li>
+                    <li>✅ <strong>工具辅助</strong>：必须使用直尺对齐点子画线，确保线条笔直，避免图形歪斜</li>
+                    <li>✅ <strong>端正学习态度</strong>：引导孩子明白认真对待每一次作业，培养严谨细致的学习习惯，对未来学习至关重要</li>
+                </ul>
+            </div>
+
+            <div class="note">
+                <strong>📌 重要提醒</strong>：
+                <ul>
+                    <li>下周一请帮孩子准备平面图形学具和七巧板</li>
+                </ul>
             </div>
         </div>
     </div>
 
+    <!-- 周总结 -->
+    <div class="week-summary" id="week-summary">
+        <h2>📊 第1周学习总结（3.5-3.9）</h2>
+        
+        <div class="summary-section">
+            <h3>📚 语文重点</h3>
+            <ul>
+                <li>✅ 学习课文：《小公鸡和小鸭子》</li>
+                <li>✅ 预习课文：《树和喜鹊》</li>
+                <li>✅ 复习范围：p4-15页</li>
+                <li>⚠️ 必带课本：语文书、课堂作业本、写字AB、古诗75首</li>
+            </ul>
+        </div>
+
+        <div class="summary-section">
+            <h3>📐 数学重点</h3>
+            <ul>
+                <li>✅ 图形规范：点子图画正方形/长方形要点子对齐</li>
+                <li>✅ 工具使用：必须用直尺画线</li>
+                <li>⚠️ 下周准备：平面图形学具、七巧板</li>
+            </ul>
+        </div>
+
+        <div class="summary-section">
+            <h3>🎯 下周计划</h3>
+            <ul>
+                <li>□ 继续学习新课内容</li>
+                <li>□ 检查作业完成情况</li>
+                <li>□ 落实学习习惯培养</li>
+            </ul>
+        </div>
+    </div>
+
     <div class="footer">
-        <p>© 2026 饭团学习助手 | 自动更新日期：2026-03-03</p>
+        <p>© 2026 饭团学习助手 | 自动更新日期：2026-03-06</p>
         <p>每天更新学习事项 · 便于查阅和复习</p>
     </div>
 </body>
