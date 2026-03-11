@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>饭团兴趣班学习记录</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+        body {
+            background-color: #f0f4f8;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            color: #2d3748;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        .header .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        .filter-bar {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .filter-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .filter-group label {
+            font-weight: bold;
+            color: #333;
+        }
+        .filter-btn {
+            padding: 6px 16px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            background: #f8f9fa;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+        .filter-btn.active, .filter-btn:hover {
+            color: white;
+            border-color: transparent;
+        }
+        .date-btn.active, .date-btn:hover {
+            background: #ff6b6b;
+        }
+        .subject-btn.all.active, .subject-btn.all:hover {
+            background: #6c757d;
+        }
+        .subject-btn.basketball.active, .subject-btn.basketball:hover {
+            background: #ff8c00;
+        }
+        .subject-btn.painting.active, .subject-btn.painting:hover {
+            background: #9c27b0;
+        }
+        .subject-btn.chess.active, .subject-btn.chess:hover {
+            background: #2196f3;
+        }
+        .subject-btn.english.active, .subject-btn.english:hover {
+            background: #4caf50;
+        }
+        .day-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .day-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #ff6b6b;
+            margin-bottom: 20px;
+        }
+        .day-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #ff6b6b;
+        }
+        .subject-block {
+            margin-bottom: 25px;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .basketball {
+            background-color: #fff3e0;
+            border-left: 4px solid #ff8c00;
+        }
+        .painting {
+            background-color: #f3e5f5;
+            border-left: 4px solid #9c27b0;
+        }
+        .chess {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196f3;
+        }
+        .english {
+            background-color: #e8f5e9;
+            border-left: 4px solid #4caf50;
+        }
+        .subject-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .basketball .subject-title { color: #e65100; }
+        .painting .subject-title { color: #7b1fa2; }
+        .chess .subject-title { color: #1565c0; }
+        .english .subject-title { color: #2e7d32; }
+        .task-list {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+        .task-item {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            line-height: 1.6;
+        }
+        .task-item:last-child {
+            border-bottom: none;
+        }
+        .notice-box {
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+            background: #fff9c4;
+            border-left: 4px solid #fbc02d;
+        }
+        .summary-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .summary-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #ff6b6b;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #ff6b6b;
+            margin-bottom: 20px;
+        }
+        .summary-section {
+            margin-bottom: 20px;
+        }
+        .summary-section h3 {
+            margin-bottom: 10px;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 14px;
+            background: white;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        .hidden {
+            display: none !important;
+        }
+        @media (max-width: 768px) {
+            .filter-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            .day-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎨 饭团兴趣班学习记录</h1>
+        <div class="subtitle">篮球 | 画画 | 国际象棋 | 英语 | 每日练习记录</div>
+    </div>
+
+    <!-- 筛选栏 -->
+    <div class="filter-bar">
+        <div class="filter-group">
+            <label>日期筛选：</label>
+            <button class="filter-btn date-btn active" data-date="all">全部</button>
+            <button class="filter-btn date-btn" data-date="2026-03-09">3月9日</button>
+        </div>
+        <div class="filter-group">
+            <label>兴趣班筛选：</label>
+            <button class="filter-btn subject-btn all active" data-subject="all">全部</button>
+            <button class="filter-btn subject-btn basketball" data-subject="basketball">篮球</button>
+            <button class="filter-btn subject-btn painting" data-subject="painting">画画</button>
+            <button class="filter-btn subject-btn chess" data-subject="chess">国际象棋</button>
+            <button class="filter-btn subject-btn english" data-subject="english">英语</button>
+        </div>
+    </div>
+
+    <!-- 3月9日 -->
+    <div class="day-card" data-date="2026-03-09">
+        <div class="day-header">
+            <div class="day-title">2026年3月9日 星期一</div>
+        </div>
+
+        <div class="subject-block basketball" data-subject="basketball">
+            <h3 class="subject-title">🏀 篮球</h3>
+            <div class="task-list">
+                <div class="task-item">✅ 练习1：右手运球练习</div>
+                <div class="task-item">动作要求：
+                    <ul style="padding-left: 25px; margin-top: 5px;">
+                        <li>双脚分开站立</li>
+                        <li>右手拍球，拍球高度到肩膀位置</li>
+                        <li>练习右手运球往前走</li>
+                    </ul>
+                </div>
+                <div class="task-item">要求：回家按动作规范完成练习</div>
+            </div>
+        </div>
+
+        <!-- 其他兴趣班占位，后续补充内容 -->
+        <div class="subject-block painting hidden" data-subject="painting"></div>
+        <div class="subject-block chess hidden" data-subject="chess"></div>
+        <div class="subject-block english hidden" data-subject="english"></div>
+    </div>
+
+    <!-- 后续日期内容可在此处添加 -->
+
+    <div class="footer">
+        <p>© 2026 饭团兴趣班助手 | 更新日期：2026-03-09</p>
+        <p>每日更新练习内容，支持按日期/兴趣班筛选查询</p>
+    </div>
+
+    <script>
+        const dateBtns = document.querySelectorAll('.date-btn');
+        const subjectBtns = document.querySelectorAll('.subject-btn');
+        const dayCards = document.querySelectorAll('.day-card');
+        const subjectBlocks = document.querySelectorAll('.subject-block');
+
+        let currentDateFilter = 'all';
+        let currentSubjectFilter = 'all';
+
+        function applyFilters() {
+            // 处理日期筛选
+            dayCards.forEach(card => {
+                const date = card.dataset.date;
+                if (currentDateFilter === 'all' || currentDateFilter === date) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            // 处理兴趣班筛选
+            if (currentSubjectFilter === 'all') {
+                subjectBlocks.forEach(block => {
+                    if (block.innerHTML.trim() !== '') {
+                        block.classList.remove('hidden');
+                    }
+                });
+            } else {
+                subjectBlocks.forEach(block => {
+                    if (block.dataset.subject === currentSubjectFilter) {
+                        block.classList.remove('hidden');
+                    } else {
+                        block.classList.add('hidden');
+                    }
+                });
+            }
+        }
+
+        // 日期按钮事件
+        dateBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                dateBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentDateFilter = btn.dataset.date;
+                applyFilters();
+            });
+        });
+
+        // 兴趣班按钮事件
+        subjectBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                subjectBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentSubjectFilter = btn.dataset.subject;
+                applyFilters();
+            });
+        });
+    </script>
+</body>
+</html>
