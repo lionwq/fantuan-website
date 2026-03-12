@@ -36,12 +36,12 @@
         }
         .filter-bar {
             background: white;
-            padding: 20px;
+            padding: 15px;
             border-radius: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             display: flex;
-            gap: 30px;
+            gap: 20px;
             flex-wrap: wrap;
             align-items: center;
         }
@@ -70,17 +70,17 @@
         .day-card {
             background: white;
             border-radius: 10px;
-            padding: 25px;
-            margin-bottom: 25px;
+            padding: 18px;
+            margin-bottom: 20px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
         .day-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-bottom: 15px;
+            padding-bottom: 10px;
             border-bottom: 2px solid #667eea;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         .day-title {
             font-size: 22px;
@@ -198,11 +198,11 @@
         <div class="filter-group">
             <label>日期筛选：</label>
             <button class="filter-btn date-btn active" data-date="all">全部</button>
-            <button class="filter-btn date-btn" data-date="2026-03-05">3月5日</button>
-            <button class="filter-btn date-btn" data-date="2026-03-06">3月6日</button>
-            <button class="filter-btn date-btn" data-date="2026-03-09">3月9日</button>
-            <button class="filter-btn date-btn" data-date="2026-03-10">3月10日</button>
             <button class="filter-btn date-btn" data-date="2026-03-12">3月12日</button>
+            <button class="filter-btn date-btn" data-date="2026-03-10">3月10日</button>
+            <button class="filter-btn date-btn" data-date="2026-03-09">3月9日</button>
+            <button class="filter-btn date-btn" data-date="2026-03-06">3月6日</button>
+            <button class="filter-btn date-btn" data-date="2026-03-05">3月5日</button>
             <button class="filter-btn date-btn" data-date="summary">本周总结</button>
         </div>
         <div class="filter-group">
@@ -210,6 +210,104 @@
             <button class="filter-btn subject-btn active" data-subject="all">全部</button>
             <button class="filter-btn subject-btn" data-subject="chinese">语文</button>
             <button class="filter-btn subject-btn" data-subject="math">数学</button>
+        </div>
+    </div>
+
+    <!-- 3月12日 -->
+    <div class="day-card" data-date="2026-03-12">
+        <div class="day-header">
+            <div class="day-title">2026年3月12日 星期三</div>
+            <div class="day-tag">本周第5天</div>
+        </div>
+
+        <div class="subject-block chinese" data-subject="chinese">
+            <h3 class="subject-title">📖 语文</h3>
+            <div class="task-list">
+                <div class="task-item">✅ 背诵：古诗46页《望天门山》</div>
+                <div class="task-item">✅ 朗读：语文书26-30页</div>
+                <div class="task-item">✅ 课堂作业：完成课堂作业本8-10页（园地一，多数同学已在校完成）、11页第一题</div>
+            </div>
+        </div>
+
+        <div class="subject-block math" data-subject="math">
+            <h3 class="subject-title">📐 数学</h3>
+            <div class="task-list">
+                <div class="task-item">✅ 今日学习内容：认识七巧板、用一套七巧板拼组</div>
+            </div>
+            <div class="notice-box reminder">
+                <strong>📌 学习建议：</strong>
+                <ul style="padding-left: 20px; margin-top: 8px;">
+                    <li>亲子互答：
+                        <ul>
+                            <li>七巧板由7块板组成</li>
+                            <li>七巧板由3种图形组成：5个三角形（2个大三角形相同、2个小三角形相同、1个中等三角形）、1个正方形、1个平行四边形</li>
+                        </ul>
+                    </li>
+                    <li>写一写：会写「长方形、正方形、平行四边形、三角形、圆」这几个字</li>
+                    <li>拼一拼：从2块板开始有序拼组，练习拼三角形、长方形、正方形（不强求所有情况都会）</li>
+                </ul>
+            </div>
+            <div class="notice-box warning">
+                <strong>⚠️ 作业提醒：</strong>
+                <ul style="padding-left: 20px; margin-top: 8px;">
+                    <li>本学期在校时间短、复习时间少，建议在家口算练习时计时，及时掌握正确率；学习偏弱的孩子可自备练习册，每日巩固新知</li>
+                    <li>每日常规作业：课堂作业本1页、口算1页，尽量在校完成，来不及可带回家做</li>
+                    <li>今日课堂作业本仅3位同学带回家，口算本基本批改完成，家长可及时了解孩子在校作业情况</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3月9日 -->
+    <div class="day-card" data-date="2026-03-09">
+        <div class="day-header">
+            <div class="day-title">2026年3月9日 星期一</div>
+            <div class="day-tag">本周第3天</div>
+        </div>
+
+        <div class="subject-block chinese" data-subject="chinese">
+            <h3 class="subject-title">📖 语文</h3>
+            <div class="task-list">
+                <div class="task-item">✅ 背诵：《黄鹤楼送孟浩然之广陵》，在古诗书上签字</div>
+                <div class="task-item">✅ 读书：语文书16-19、26-28页</div>
+            </div>
+            <div class="notice-box reminder">
+                <strong>📝 重要提醒：</strong>
+                <ul style="padding-left: 20px; margin-top: 8px;">
+                    <li>今天发了家校联系本，因为要使用一个学期的，记得贴姓名贴、包书皮</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="subject-block math" data-subject="math">
+            <h3 class="subject-title">📐 数学</h3>
+            <div class="task-list">
+                <div class="task-item">✅ 准备：明天需要准备七巧板</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3月6日 -->
+    <div class="day-card" data-date="2026-03-06">
+        <div class="day-header">
+            <div class="day-title">2026年3月6日 星期五</div>
+            <div class="day-tag">本周第2天</div>
+        </div>
+
+        <div class="subject-block chinese" data-subject="chinese">
+            <h3 class="subject-title">📖 语文</h3>
+            <div class="task-list">
+                <div class="task-item">✅ 今日练字：春日、冬天、开花、吹风、飞入、走开、河水、说出、让开、自己</div>
+                <div class="task-item">✅ 【周末作业】预习课文：《树和喜鹊》p29-30</div>
+                <div class="task-item">✅ 【周末作业】复习读书：语文书p8-15</div>
+                <div class="task-item">✅ 【周末作业】课堂作业：完成课堂作业本p3、5、7、8页的第一题</div>
+            </div>
+            <div class="notice-box reminder">
+                <strong>📌 重要提醒：</strong>
+                <ul style="padding-left: 20px; margin-top: 8px;">
+                    <li>本学期家校联系本还没发，如需记作业可以先让孩子带上学期的家校联系本</li>
+                </ul>
+            </div>
         </div>
     </div>
 
@@ -278,57 +376,19 @@
                 </ul>
             </div>
         </div>
-    </div>
-
-    <!-- 3月6日 -->
-    <div class="day-card" data-date="2026-03-06">
-        <div class="day-header">
-            <div class="day-title">2026年3月6日 星期五</div>
-            <div class="day-tag">本周第2天</div>
-        </div>
-
-        <div class="subject-block chinese" data-subject="chinese">
-            <h3 class="subject-title">📖 语文</h3>
+    </div> class="subject-title">📐 数学</h3>
             <div class="task-list">
-                <div class="task-item">✅ 今日练字：春日、冬天、开花、吹风、飞入、走开、河水、说出、让开、自己</div>
-                <div class="task-item">✅ 【周末作业】预习课文：《树和喜鹊》p29-30</div>
-                <div class="task-item">✅ 【周末作业】复习读书：语文书p8-15</div>
-                <div class="task-item">✅ 【周末作业】课堂作业：完成课堂作业本p3、5、7、8页的第一题</div>
+                <div class="task-item">✅ 今日学习内容：第三单元第一课时《100以内数的认识：数数、数的组成》</div>
+                <div class="task-item">✅ 学习建议：借助小棒动手操作，说出37、56、79、88后面的5个数，拐弯数要说明凑十过程</div>
+                <div class="task-item">✅ 明日准备：家里有计数器的可以带来学校，其他学具暂时放家里</div>
             </div>
             <div class="notice-box reminder">
-                <strong>📌 重要提醒：</strong>
+                <strong>📌 知识点梳理：</strong>
                 <ul style="padding-left: 20px; margin-top: 8px;">
-                    <li>本学期家校联系本还没发，如需记作业可以先让孩子带上学期的家校联系本</li>
+                    <li>计数单位关系：10个一是十，10个十是一百</li>
+                    <li>数的组成：比如20由2个十组成，49由4个十和9个一组成</li>
+                    <li>数数方法：一个一个数、两个两个数、五个五个数、十个十个数，数数时可以用「做记号、圈10」辅助</li>
                 </ul>
-            </div>
-        </div>
-    </div>
-
-    <!-- 3月9日 -->
-    <div class="day-card" data-date="2026-03-09">
-        <div class="day-header">
-            <div class="day-title">2026年3月9日 星期一</div>
-            <div class="day-tag">本周第3天</div>
-        </div>
-
-        <div class="subject-block chinese" data-subject="chinese">
-            <h3 class="subject-title">📖 语文</h3>
-            <div class="task-list">
-                <div class="task-item">✅ 背诵：《黄鹤楼送孟浩然之广陵》，在古诗书上签字</div>
-                <div class="task-item">✅ 读书：语文书16-19、26-28页</div>
-            </div>
-            <div class="notice-box reminder">
-                <strong>📝 重要提醒：</strong>
-                <ul style="padding-left: 20px; margin-top: 8px;">
-                    <li>今天发了家校联系本，因为要使用一个学期的，记得贴姓名贴、包书皮</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="subject-block math" data-subject="math">
-            <h3 class="subject-title">📐 数学</h3>
-            <div class="task-list">
-                <div class="task-item">✅ 准备：明天需要准备七巧板</div>
             </div>
         </div>
     </div>
@@ -391,35 +451,121 @@
         </div>
     </div>
 
-    <!-- 3月12日 -->
-    <div class="day-card" data-date="2026-03-12">
+    <!-- 3月9日 -->
+    <div class="day-card" data-date="2026-03-09">
         <div class="day-header">
-            <div class="day-title">2026年3月12日 星期三</div>
-            <div class="day-tag">本周第5天</div>
+            <div class="day-title">2026年3月9日 星期一</div>
+            <div class="day-tag">本周第3天</div>
         </div>
 
         <div class="subject-block chinese" data-subject="chinese">
             <h3 class="subject-title">📖 语文</h3>
             <div class="task-list">
-                <div class="task-item">✅ 背诵：古诗46页《望天门山》</div>
-                <div class="task-item">✅ 朗读：语文书26-30页</div>
-                <div class="task-item">✅ 课堂作业：完成课堂作业本8-10页（园地一，多数同学已在校完成）、11页第一题</div>
+                <div class="task-item">✅ 背诵：《黄鹤楼送孟浩然之广陵》，在古诗书上签字</div>
+                <div class="task-item">✅ 读书：语文书16-19、26-28页</div>
+            </div>
+            <div class="notice-box reminder">
+                <strong>📝 重要提醒：</strong>
+                <ul style="padding-left: 20px; margin-top: 8px;">
+                    <li>今天发了家校联系本，因为要使用一个学期的，记得贴姓名贴、包书皮</li>
+                </ul>
             </div>
         </div>
 
         <div class="subject-block math" data-subject="math">
             <h3 class="subject-title">📐 数学</h3>
             <div class="task-list">
-                <div class="task-item">✅ 今日学习内容：第三单元第一课时《100以内数的认识：数数、数的组成》</div>
-                <div class="task-item">✅ 学习建议：借助小棒动手操作，说出37、56、79、88后面的5个数，拐弯数要说明凑十过程</div>
-                <div class="task-item">✅ 明日准备：家里有计数器的可以带来学校，其他学具暂时放家里</div>
+                <div class="task-item">✅ 准备：明天需要准备七巧板</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3月6日 -->
+    <div class="day-card" data-date="2026-03-06">
+        <div class="day-header">
+            <div class="day-title">2026年3月6日 星期五</div>
+            <div class="day-tag">本周第2天</div>
+        </div>
+
+        <div class="subject-block chinese" data-subject="chinese">
+            <h3 class="subject-title">📖 语文</h3>
+            <div class="task-list">
+                <div class="task-item">✅ 今日练字：春日、冬天、开花、吹风、飞入、走开、河水、说出、让开、自己</div>
+                <div class="task-item">✅ 【周末作业】预习课文：《树和喜鹊》p29-30</div>
+                <div class="task-item">✅ 【周末作业】复习读书：语文书p8-15</div>
+                <div class="task-item">✅ 【周末作业】课堂作业：完成课堂作业本p3、5、7、8页的第一题</div>
             </div>
             <div class="notice-box reminder">
-                <strong>📌 知识点梳理：</strong>
+                <strong>📌 重要提醒：</strong>
                 <ul style="padding-left: 20px; margin-top: 8px;">
-                    <li>计数单位关系：10个一是十，10个十是一百</li>
-                    <li>数的组成：比如20由2个十组成，49由4个十和9个一组成</li>
-                    <li>数数方法：一个一个数、两个两个数、五个五个数、十个十个数，数数时可以用「做记号、圈10」辅助</li>
+                    <li>本学期家校联系本还没发，如需记作业可以先让孩子带上学期的家校联系本</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3月5日 -->
+    <div class="day-card" data-date="2026-03-05">
+        <div class="day-header">
+            <div class="day-title">2026年3月5日 星期四</div>
+            <div class="day-tag">本周第1天</div>
+        </div>
+
+        <div class="subject-block chinese" data-subject="chinese">
+            <h3 class="subject-title">📖 语文</h3>
+            <div class="task-list">
+                <div class="task-item">✅ 复习读书：第4-7页</div>
+                <div class="task-item">✅ 预习课文：《小公鸡和小鸭子》</div>
+            </div>
+            <div class="notice-box warning">
+                <strong>⚠️ 重点要求：</strong>
+                <ul style="padding-left: 20px; margin-top: 8px;">
+                    <li>学校已完成一遍流程，回家需补做：</li>
+                    <li>读课文：学校读了1遍 → 回家再读2遍</li>
+                    <li>圈画：一类字和二类字（部分同学当堂未完成）</li>
+                    <li>思考：课后习题</li>
+                </ul>
+            </div>
+            <div class="notice-box reminder">
+                <strong>📝 补做任务：</strong>
+                <ul style="padding-left: 20px; margin-top: 8px;">
+                    <li>2位同学：课堂作业本第一课需回家补好（学校已完成）</li>
+                </ul>
+            </div>
+            <div class="notice-box warning">
+                <strong>📦 每日必带课本（即日起）：</strong>
+                <ul style="padding-left: 20px; margin-top: 8px;">
+                    <li>语文书</li>
+                    <li>语文课堂作业本</li>
+                    <li>写字AB</li>
+                    <li>古诗75首</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="subject-block math" data-subject="math">
+            <h3 class="subject-title">📐 数学</h3>
+            <div class="task-list">
+                <div class="task-item">✅ 作业检查：翻阅孩子课堂作业本P1的作业情况</div>
+                <div class="task-item">✅ 订正要求：P1最后一题订正需注意规范</div>
+            </div>
+            <div class="notice-box warning">
+                <strong>⚠️ 订正注意事项：</strong>
+                <ul style="padding-left: 20px; margin-top: 8px;">
+                    <li><strong>图形标准性</strong>：点子图上画图形时通过"数点子"保证规范：
+                        <ul style="margin-left: 20px;">
+                            <li>正方形：每条边的点子数量相同</li>
+                            <li>长方形：对边的点子数量相同（如上下边5个点，左右边3个点）</li>
+                        </ul>
+                    </li>
+                    <li><strong>工具辅助</strong>：必须使用直尺对齐点子画线，确保线条笔直，避免图形歪斜</li>
+                    <li><strong>端正学习态度</strong>：引导孩子明白认真对待每一次作业，培养严谨细致的学习习惯</li>
+                </ul>
+            </div>
+            <div class="notice-box reminder">
+                <strong>📌 重要提醒：</strong>
+                <ul style="padding-left: 20px; margin-top: 8px;">
+                    <li>下周一请帮孩子准备平面图形学具和七巧板</li>
                 </ul>
             </div>
         </div>
